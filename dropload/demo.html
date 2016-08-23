@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+    <title>加载底部</title>
+    <style>
+    html,
+    body,
+    div,
+    h1,
+    h2,
+    h3,
+    img,
+    p,
+    ul,
+    li,
+    section,
+    header,
+    span {
+        margin: 0;
+        padding: 0;
+    }
+    
+    section {
+        display: block;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-text-size-adjust: none;
+        text-decoration: none;
+    }
+    
+    html {
+        font-size: 10px;
+    }
+    
+    body {
+        background-color: #f5f5f5;
+        font-size: 1.2em;
+    }
+    
+    .header {
+        height: 44px;
+        line-height: 44px;
+        border-bottom: 1px solid #ccc;
+        background-color: #eee;
+    }
+    
+    .header h1 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: normal;
+    }
+    
+    .content {
+        background-color: #fff;
+    }
+    
+    .content .item {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        padding: 3.125%;
+        border-bottom: 1px solid #ddd;
+        color: #333;
+        text-decoration: none;
+    }
+    
+    .content .item img {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #ddd;
+    }
+    
+    .content .item h3 {
+        display: block;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 100%;
+        max-height: 40px;
+        overflow: hidden;
+        line-height: 20px;
+        margin: 0 10px;
+        font-size: 1.2rem;
+    }
+    
+    .content .item .date {
+        display: block;
+        height: 20px;
+        line-height: 20px;
+        color: #999;
+    }
+    
+    .opacity {
+        -webkit-animation: opacity 0.5s linear;
+        animation: opacity 0.5s linear;
+    }
+    
+    @-webkit-keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    header {
+        height: 40px;
+        font-size: 0;
+    }
+    
+    header span {
+        display: inline-block;
+        height: 100%;
+        width: 50%;
+        font-size: 16px;
+        text-align: center;
+        line-height: 40px;
+        color: #889aac;
+        background-color: #f8f8f8;
+        box-sizing: border-box;
+        border-bottom: 1px solid #e3e3e3;
+    }
+    
+    header span:first-child {
+        border-right: 1px solid #e3e3e3;
+    }
+    
+    header .select {
+        color: #1d9dd4;
+        border-bottom: 1px solid #1d9dd4;
+    }
+    
+    .lists li {
+        height: 90px;
+        padding: 17px 10px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #e3e3e3;
+    }
+    
+    .lists li:last-child {
+        border: 0px;
+        margin-bottom: 20px;
+    }
+    
+    .head,
+    .descr {
+        float: left;
+        height: 56px;
+    }
+    
+    .head {
+        width: 56px;
+        border-radius: 50%;
+        position: relative;
+    }
+    
+    .head span {
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #fff;
+        background-color: #b9b9b9;
+        border: 1px solid #adadad;
+        position: absolute;
+        right: 1px;
+        bottom: -4px;
+    }
+    
+    .head .ranking {
+        background-color: #ffa800;
+        border: 1px solid #ff6f05;
+    }
+    
+    .descr {
+        width: 250px;
+        color: #999;
+        margin-left: 14px;
+    }
+    
+    .descr h3 {
+        font-size: 16px;
+        color: #19a3d9;
+    }
+    
+    .descr p {
+        font-size: 14px;
+        margin: 4px 0 2px 0;
+    }
+    
+    .descr span {
+        font-size: 10px;
+        padding-right: 16px;
+        padding-left: 16px;
+        box-sizing: border-box;
+    }
+    
+    .descr span:first-child {
+        padding-left: 0px;
+        border-right: 1px solid #e3e3e3;
+    }
+    
+    .talent {
+        display: none;
+    }
+      
+    </style>
+    <link rel="stylesheet" href="dist/dropload.css">
+</head>
+
+<body>
+    <div class="content">
+        <div>
+            <div class="lists">
+                <div class="coming-box">
+                    <ul class="coming">
+                        <li>
+                            <div class="head">
+                                <a href="/wenda/v2/expert/43/"><img src="http://m.jzb.com/atth/u/4131568_100.png" alt=""></a>
+                            </div>
+                            <div class="descr">
+                                <h3>郭蕊2</h3>
+                                <p>人力资源部</p>
+                                <div><span>0次回答</span><span>0次购买</span></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="head">
+                                <a href="/wenda/v2/expert/43/"><img src="http://m.jzb.com/atth/u/4131568_100.png" alt=""></a>
+                            </div>
+                            <div class="descr">
+                                <h3>郭蕊2</h3>
+                                <p>人力资源部</p>
+                                <div><span>0次回答</span><span>0次购买</span></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="head">
+                                <a href="/wenda/v2/expert/43/"><img src="http://m.jzb.com/atth/u/4131568_100.png" alt=""></a>
+                            </div>
+                            <div class="descr">
+                                <h3>郭蕊2</h3>
+                                <p>人力资源部</p>
+                                <div><span>0次回答</span><span>0次购买</span></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="head">
+                                <a href="/wenda/v2/expert/43/"><img src="http://m.jzb.com/atth/u/4131568_100.png" alt=""></a>
+                            </div>
+                            <div class="descr">
+                                <h3>郭蕊2</h3>
+                                <p>人力资源部</p>
+                                <div><span>0次回答</span><span>0次购买</span></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="head">
+                                <a href="/wenda/v2/expert/43/"><img src="http://m.jzb.com/atth/u/4131568_100.png" alt=""></a>
+                            </div>
+                            <div class="descr">
+                                <h3>郭蕊2</h3>
+                                <p>人力资源部</p>
+                                <div><span>0次回答</span><span>0次购买</span></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="head">
+                                <a href="/wenda/v2/expert/43/"><img src="http://m.jzb.com/atth/u/4131568_100.png" alt=""></a>
+                            </div>
+                            <div class="descr">
+                                <h3>郭蕊2</h3>
+                                <p>人力资源部</p>
+                                <div><span>0次回答</span><span>0次购买</span></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="head">
+                                <a href="/wenda/v2/expert/43/"><img src="http://m.jzb.com/atth/u/4131568_100.png" alt=""></a>
+                            </div>
+                            <div class="descr">
+                                <h3>郭蕊2</h3>
+                                <p>人力资源部</p>
+                                <div><span>0次回答</span><span>0次购买</span></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="head">
+                                <a href="/wenda/v2/expert/43/"><img src="http://m.jzb.com/atth/u/4131568_100.png" alt=""></a>
+                            </div>
+                            <div class="descr">
+                                <h3>郭蕊2</h3>
+                                <p>人力资源部</p>
+                                <div><span>0次回答</span><span>0次购买</span></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="head">
+                                <a href="/wenda/v2/expert/43/"><img src="http://m.jzb.com/atth/u/4131568_100.png" alt=""></a>
+                            </div>
+                            <div class="descr">
+                                <h3>郭蕊2</h3>
+                                <p>人力资源部</p>
+                                <div><span>0次回答</span><span>0次购买</span></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="head">
+                                <a href="/wenda/v2/expert/43/"><img src="http://m.jzb.com/atth/u/4131568_100.png" alt=""></a>
+                            </div>
+                            <div class="descr">
+                                <h3>郭蕊2</h3>
+                                <p>人力资源部</p>
+                                <div><span>0次回答</span><span>0次购买</span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://img.eduuu.com/website/public_js/jzb/jquery.js"></script>
+    <script type="text/javascript" src="dist/dropload.js"></script>
+    
+    <script>
+    $(function() {
+        var iii = 0;
+        loadObj = {
+            // dropClass: 'coming-box',
+            // domRefresh: '<div class="dropload-refresh">↑上拉加载更多</div>',
+            // dropUpdate: '<div class="dropload-update">↓释放加载</div>',
+            // dropLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+            // dropComplete: '<div class="dropload-complete">内容已全部显示！</div>',
+            callback: function(load){
+                $.ajax({
+                    url: "/wenda/v2/api/expert/info/?order=2",
+                    type: 'GET',
+                    success: function(data) {
+                        data = JSON.parse(data);
+                        var total = data.meta.total;
+                        var datas = data.objects;
+                        var result = "";
+                        iii++;
+                        if (iii < 3) {
+                            for (var i = 0; i < datas.length; i++) {
+                                result += '<li>' + '<div class="head">' + '<a href="/wenda/v2/expert/' + datas[i].id + '/">' + '<img src=http://m.jzb.com/atth/u/' + datas[i].user_id + '_100.png alt="">' + '</a>' + '</div>' + '<div class="descr">' + '<h3>' + datas[i].name + '</h3>' + '<p>' + datas[i].position + '</p>' + '<div>' + '<span>' + datas[i].answer_number + '次回答</span>' + '<span>' + datas[i].listen_number + '次购买</span>' + '</div>' + '</div>' + '</li>'
+                            }
+                            
+                            /*延时是为了更好的演示效果*/
+                            setTimeout(function(){
+                                $('.coming').append(result);
+                                load.reset();  
+                            }, 1000)
+                        }else {
+
+                            load.complete();
+                            /*延时是为了更好的演示效果*/
+                            setTimeout(function(){
+                                load.reset(); 
+                            }, 1000)
+                        }
+
+                    }
+                })
+            }
+        }
+
+        dropLoad(loadObj);
+       
+    });
+
+
+    </script>
+</body>
+
+</html>
