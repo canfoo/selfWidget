@@ -1,6 +1,5 @@
 var http = require('http');
 var fs = require('fs');
-var mime = require('mime');
 
 http.createServer(function (request, response) {
     var indexUrl = request.url;

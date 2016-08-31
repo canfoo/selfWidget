@@ -357,6 +357,7 @@
     
     <script>
     $(function() {
+
         var iii = 0;
         loadObj = {
             // dropClass: 'coming-box',
@@ -376,7 +377,26 @@
                         iii++;
                         if (iii < 3) {
                             for (var i = 0; i < datas.length; i++) {
-                                result += '<li>' + '<div class="head">' + '<a href="/wenda/v2/expert/' + datas[i].id + '/">' + '<img src=http://m.jzb.com/atth/u/' + datas[i].user_id + '_100.png alt="">' + '</a>' + '</div>' + '<div class="descr">' + '<h3>' + datas[i].name + '</h3>' + '<p>' + datas[i].position + '</p>' + '<div>' + '<span>' + datas[i].answer_number + '次回答</span>' + '<span>' + datas[i].listen_number + '次购买</span>' + '</div>' + '</div>' + '</li>'
+                                result += '<li>' 
+                                        + '<div class="head">' 
+                                        + '<a href="/wenda/v2/expert/' + datas[i].id + '/">'
+                                        + '<img src=http://m.jzb.com/atth/u/' + datas[i].user_id + '_100.png alt="">' 
+                                        + '</a>'
+                                        + '</div>' 
+                                        + '<div class="descr">' 
+                                        + '<h3>' + datas[i].name 
+                                        + '</h3>' 
+                                        + '<p>' + datas[i].position 
+                                        + '</p>' 
+                                        + '<div>' 
+                                        + '<span>' + datas[i].answer_number + '次回答</span>' 
+                                        + '<span>' + datas[i].listen_number + '次购买</span>' 
+                                        + '</div>' 
+                                        + '</div>' 
+                                        + '</li>'
+
+
+                                
                             }
                             
                             /*延时是为了更好的演示效果*/
