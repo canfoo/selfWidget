@@ -14,7 +14,6 @@ http.createServer(function (request, response) {
 
     fs.exists(path, function(exists){
         if(exists){
-            response.setHeader('Content-Type',mime.lookup(request.url));
             fs.readFile(path, 'utf8', function(err, data){
                 response.write(data);
                 response.end();
