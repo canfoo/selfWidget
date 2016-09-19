@@ -32,7 +32,7 @@
     width: 15px;
     border-radius: 100%;
     margin: 6px;
-    border: 2px solid #666;
+    border: 1px solid #666;
     border-bottom-color: transparent;
     vertical-align: middle;
     -webkit-animation: rotate 0.75s linear infinite;

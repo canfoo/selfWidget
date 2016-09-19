@@ -12,14 +12,14 @@
      * }
      */
     function Load(obj) {
-        this.dropClass = obj.dropClass === undefined ? 'body' : obj.dropClass;
+        this.dropClass = obj.dropClass === undefined ? 'body' : '.' + obj.dropClass;
         this.domRefresh = obj.domRefresh === undefined ? '<div class="dropload-refresh">↑上拉加载更多</div>' : obj.domRefresh;
         this.dropUpdate = obj.dropUpdate === undefined ? '<div class="dropload-update">↓释放加载</div>' : obj.dropUpdate;
         this.dropLoad = obj.dropLoad === undefined ? '<div class="dropload-load"><span class="loading"></span>加载中...</div>' : obj.dropLoad;
         this.dropComplete = obj.dropComplete === undefined ? '<div class="dropload-complete">内容已全部显示！</div>' : obj.dropComplete;
         this.callback = obj.callback === undefined ? "" : obj.callback;
         this.init();
-        this.isLoad();
+        this.loadAction();
     }
 
     Load.prototype.init = function() {
@@ -35,7 +35,6 @@
         /*是否加载完成*/
         this.completeFlag = false;
 
-        this.dropClass = this.dropClass === "body" ? "body" : '.' + this.dropClass;
         this.content = document.querySelector(this.dropClass);
         this.loadBox = document.createElement("div");
         this.loadBox.className = "dropload";
@@ -43,9 +42,9 @@
     }
 
     /**
-     * [isLoad description] 执行加载动作
+     * [loadAction description] 执行加载动作
      */
-    Load.prototype.isLoad = function() {
+    Load.prototype.loadAction = function() {
         var _this = this;
         window.onscroll = function() {
             var realHeight = (document.documentElement.clientHeight || document.body.clientHeight) + (document.documentElement.scrollTop || document.body.scrollTop);
@@ -120,7 +119,7 @@
      * @param  见Load函数描述
      * @return 加载
      */
-    window.dropLoad = function(option) {
+    window.loadMore = function(option) {
         return new Load(option);
     } 
 
